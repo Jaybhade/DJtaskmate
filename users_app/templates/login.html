@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container col-6">
+        <h1>Login to TaskMate</h1>
+        {% load crispy_forms_tags %}
+        <form method="POST" class="mt-5">
+            {% csrf_token %}
+
+            {{ form|crispy }}
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <p>New User?, register <a href="{% url 'register' %}">here</a>.</p>
+    </div>
+{% endblock content %}
